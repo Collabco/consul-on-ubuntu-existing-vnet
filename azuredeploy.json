@@ -84,7 +84,7 @@
     "apiVersion": "2015-06-15",
     "customScriptCommandToExecute": "bash install-consul.sh",
     "publicIPAddressType": "Dynamic",
-    "imageSKU": "16.04.1-LTS",
+    "imageSKU": "16.04.0-LTS",
     "vnetIDRef": "[parameters('virtualNetworkName')]",
     "imageOffer": "UbuntuServer",
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), parameters('appPrefix'))]",
