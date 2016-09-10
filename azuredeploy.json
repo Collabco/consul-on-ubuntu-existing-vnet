@@ -203,7 +203,7 @@
       "apiVersion": "[variables('apiVersion')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[concat('Microsoft.Network/publicIPAddresses/', 'publicIP', copyindex())]",
+        "[concat('Microsoft.Network/publicIPAddresses/', parameters('appPrefix'),'-publicIP-', copyindex())]",
         "[concat('Microsoft.Network/loadBalancers/', parameters('appPrefix'),'_LB')]"
       ],
       "copy": {
@@ -229,7 +229,7 @@
                 }
               ],
               "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIpAddresses', concat('publicIP', copyindex()))]"
+                "id": "[resourceId('Microsoft.Network/publicIpAddresses', concat(parameters('appPrefix'),'-publicIP-', copyindex()))]"
               }
             }
           }
