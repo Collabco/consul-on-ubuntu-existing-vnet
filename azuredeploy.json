@@ -256,7 +256,7 @@
         },
         "osProfile": {
           "adminUsername": "[parameters('adminUsername')]",
-          "computerName": "[concat(parameters('appPrefix'), '_vm', copyIndex())]",
+          "computerName": "[concat(parameters('appPrefix'), 'vm', copyIndex())]",
           "linuxConfiguration": {
             "disablePasswordAuthentication": "true",
             "ssh": {
