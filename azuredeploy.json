@@ -101,7 +101,7 @@
       "name": "[variables('storageAccountName')]"
     },
     {
-      "name": "[concat('publicIP', copyindex())]",
+      "name": "[concat(parameters('appPrefix'),'-publicIP-', copyindex())]",
       "apiVersion": "[variables('apiVersion')]",
       "location": "[resourceGroup().location]",
       "copy": {
