@@ -8,4 +8,4 @@ sudo wget https://releases.hashicorp.com/consul/0.6.4/consul_0.6.4_linux_amd64.z
 sudo unzip consul_0.6.4_linux_amd64.zip
 sudo chmod 755 consul
 cd /opt/consul
-sudo nohup ./consul agent -server -bind 0.0.0.0 -client 0.0.0.0 -data-dir="/opt/consul/data" -bootstrap-expect 3 -atlas=$1 -atlas-join -atlas-token="$2" -ui -dc=$2 &
+sudo nohup ./consul agent -server -bind 0.0.0.0 -client 0.0.0.0 -data-dir="/opt/consul/data" -bootstrap-expect 3 -atlas=$1 -atlas-join -atlas-token="$2" -ui -dc=$3 &
