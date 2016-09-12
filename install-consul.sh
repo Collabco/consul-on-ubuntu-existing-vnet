@@ -10,7 +10,7 @@ sudo wget https://releases.hashicorp.com/consul/0.6.4/consul_0.6.4_linux_amd64.z
 sudo unzip consul_0.6.4_linux_amd64.zip
 sudo chmod 755 consul
 
-cd /opt/consul/config-dir
+cd /opt/consul/config
 sudo wget https://raw.githubusercontent.com/Collabco/consul-on-ubuntu-existing-vnet/master/config.json
 
 atlas=$(echo "$1" | sed 's/\//\\\//g')
