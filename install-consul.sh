@@ -12,7 +12,9 @@ sudo chmod 755 consul
 
 cd /opt/consul/config-dir
 sudo wget https://raw.githubusercontent.com/Collabco/consul-on-ubuntu-existing-vnet/master/config.json
-sudo sed -i 's/{{ATLAS_INFRASTRUCTURE}}/'"$1"'/' config.json
+
+atlas=$(echo "$1" | sed 's/\//\\\//g')
+sudo sed -i 's/{{ATLAS_INFRASTRUCTURE}}/'"$atlas"'/' config.json
 sudo sed -i 's/{{ATLAS_TOKEN}}/'"$2"'/' config.json
 sudo sed -i 's/{{DC_NAME}}/'"$3"'/' config.json
 sudo sed -i 's/{{ENCRYPT_KEY}}/'"$4"'/' config.json

@@ -93,7 +93,7 @@
     "imageSKU": "16.04.0-LTS",
     "vnetIDRef": "[parameters('virtualNetworkName')]",
     "imageOffer": "UbuntuServer",
-    "storageAccountName": "[concat(uniquestring(resourceGroup().id), parameters('appPrefix'))]",
+    "storageAccountName": "[concat(parameters('appPrefix'),uniquestring(resourceGroup().id))]",
     "sshKeyPath": "[concat('/home/',parameters('adminUserName'),'/.ssh/authorized_keys')]"
   },
   "resources": [
