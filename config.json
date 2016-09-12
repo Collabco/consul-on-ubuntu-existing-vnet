@@ -8,7 +8,7 @@
   "atlas_token": "{{ATLAS_TOKEN}}",
   "atlas_join": true,
   "bind_addr": "0.0.0.0",
-  "client_addr": "0.0.0.0"
+  "client_addr": "0.0.0.0",
   "ui": true",
   "encrypt": "{{ENCRYPT_KEY}}"
 }
