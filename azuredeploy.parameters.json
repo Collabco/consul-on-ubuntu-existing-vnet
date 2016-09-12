@@ -34,6 +34,9 @@
 		},
 		"sshKeyData": {
 		  "value": "GEN-SSH-PUB-KEY"
+		},
+		"encryptionKey": {
+		  "value": "GEN-ENCRYPTION-KEY"
 		}
     }
 }

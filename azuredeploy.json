@@ -71,6 +71,12 @@
       "metadata": {
         "description": "Name of the subnet inside the VNET"
       }
+    },
+	"encryptionKey": {
+      "type": "string",
+      "metadata": {
+        "description": "Node to node encryption key"
+      }
     }
   },
   "variables": {
@@ -323,7 +329,7 @@
           ]
         },
         "protectedSettings": {
-          "commandToExecute": "[concat(variables('customScriptCommandToExecute'),' ', parameters('existingAtlasInfraName'), ' ', parameters('existingAtlasToken'), ' ', parameters('dcName'))]"
+          "commandToExecute": "[concat(variables('customScriptCommandToExecute'),' ', parameters('existingAtlasInfraName'), ' ', parameters('existingAtlasToken'), ' ', parameters('dcName'), ' ', parameters('encryptionKey'))]"
         }
       }
     }

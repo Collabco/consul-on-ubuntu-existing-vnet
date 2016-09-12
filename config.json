@@ -1,0 +1,14 @@
+{
+  "bootstrap_expect": 3,
+  "datacenter": "{{DC_NAME}}",
+  "data_dir": "/opt/consul/data",
+  "log_level": "INFO",
+  "server": true,
+  "atlas_infrastructure": "{{ATLAS_INFRASTRUCTURE}}",
+  "atlas_token": "{{ATLAS_TOKEN}}",
+  "atlas_join": true,
+  "bind_addr": "0.0.0.0",
+  "client_addr": "0.0.0.0"
+  "ui": true",
+  "encrypt": "{{ENCRYPT_KEY}}"
+}

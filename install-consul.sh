@@ -3,9 +3,19 @@
 sudo apt-get update && sudo apt-get install -y wget unzip
 
 sudo mkdir -p /opt/consul/data
+sudo mkdir -p /opt/consul/config
+
 cd /opt/consul
 sudo wget https://releases.hashicorp.com/consul/0.6.4/consul_0.6.4_linux_amd64.zip
 sudo unzip consul_0.6.4_linux_amd64.zip
 sudo chmod 755 consul
+
+cd /opt/consul/config-dir
+sudo wget https://raw.githubusercontent.com/Collabco/consul-on-ubuntu-existing-vnet/master/config.json
+sudo sed -i 's/{{ATLAS_INFRASTRUCTURE}}/'"$1"'/' config.json
+sudo sed -i 's/{{ATLAS_TOKEN}}/'"$2"'/' config.json
+sudo sed -i 's/{{DC_NAME}}/'"$3"'/' config.json
+sudo sed -i 's/{{ENCRYPT_KEY}}/'"$4"'/' config.json
+
 cd /opt/consul
-sudo nohup ./consul agent -server -bind 0.0.0.0 -client 0.0.0.0 -data-dir="/opt/consul/data" -bootstrap-expect 3 -atlas=$1 -atlas-join -atlas-token="$2" -ui -dc=$3 &
+sudo nohup ./consul agent -config-dir="/opt/consul/config" &
